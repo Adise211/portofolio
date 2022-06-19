@@ -1,4 +1,5 @@
 import './App.css';
+// eslint-disable-next-line
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Intro from './components/intro/Intro.js';
 import NavBar from './components/NavBar.js';
