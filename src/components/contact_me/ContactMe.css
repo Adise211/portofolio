@@ -1,0 +1,65 @@
+.c {
+  height: 80vh;
+  display: flex;
+  /* align-items: center; */
+  background-color: black;
+  color: white;
+}
+
+.c-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 25%;
+
+}
+
+.c-icons{
+  height: 50px;
+  width: 100px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.c-right {
+  flex: 1;
+}
+
+.c-right > h2 {
+  margin-top: 50px;
+}
+
+form {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+input {
+  width: 50%;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+}
+
+textarea {
+  margin-top: 70px;
+  margin-right: 70px;
+}
+
+button {
+  width: 70px;
+  margin-top: 40px;
+  margin-left: 80px;
+  border: none;
+  padding: 7px;
+  background-color: white;
+}
+
+.c-sent {
+  margin-left: 30%;
+}
