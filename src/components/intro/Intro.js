@@ -18,7 +18,9 @@ const Intro = () => {
             </div>
           </div>
           <div className='i-desc'>
-            I am a full stack developer, looking for my first step in Hi-Tech.
+            I am a full stack developer, looking for my first step in High-Tech.
+            I am curious about learning new things and believe the world has a lot to offer.
+            I do believe technology plays a big role in changing people's lives for the better.
           </div>
         </div>
       </div>
