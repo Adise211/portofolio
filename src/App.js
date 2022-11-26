@@ -6,6 +6,7 @@ import NavBar from './components/NavBar.js';
 import Skills from './components/skills/Skills.js';
 import Projects from './components/projects/Projects.js';
 import ContactMe from './components/contact_me/ContactMe.js';
+import Experience from './components/experience/Experience.js';
 
 
 
@@ -15,6 +16,7 @@ function App() {
       <NavBar />
       <Intro />
       <Skills />
+      <Experience />
       <Projects />
       <ContactMe />
     </div>

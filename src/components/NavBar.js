@@ -12,6 +12,7 @@ const NavBar = () => {
           <Navbar.Brand href="#intro" style={{color:'white'}}>Who I Am</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#skills" style={{color:'white'}}>Skills</Nav.Link>
+            <Nav.Link href="#experience" style={{color:'white'}}>Experience</Nav.Link>
             <Nav.Link href="#projects" style={{color:'white'}}>Projects</Nav.Link>
             <Nav.Link href="#contact" style={{color:'white'}}>Contact Me</Nav.Link>
           </Nav>

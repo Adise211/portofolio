@@ -1,5 +1,7 @@
 import './Intro.css';
 import me from '../../images/me.jpg';
+import me_2 from '../../images/me_2.jpeg';
+import me_3 from '../../images/me_3.jpeg';
 
 
 const Intro = () => {
@@ -8,7 +10,7 @@ const Intro = () => {
       <div className='i-left'>
         <div className='i-left-wrapper'>
           <h2 className='i-intro'>Hello, My name is</h2>
-          <h1 className='i-name'>Adise Mamuye</h1>
+          <h1 className='i-name'>Adise Mamoye</h1>
           <div className='i-title'>
             <div className='i-title-wrapper'>
               <div className='i-title-item'>Full Stack Developer</div>
@@ -18,7 +20,7 @@ const Intro = () => {
             </div>
           </div>
           <div className='i-desc'>
-            I am a full stack developer, looking for my first step in High-Tech.
+            I am a full stack developer.
             I am curious about learning new things and believe the world has a lot to offer.
             I do believe technology plays a big role in changing people's lives for the better.
           </div>
@@ -26,7 +28,9 @@ const Intro = () => {
       </div>
 
       <div className='i-right'>
-        <img src={me} alt='myimage' className='i-img'/>
+        <img src={me} alt='myimage' className='i-img first'/>
+        <img src={me_2} alt='secondImage' className='i-img second'/>
+        <img src={me_3} alt='secondImage' className='i-img memoji'/>
 
       </div>
     </div>
