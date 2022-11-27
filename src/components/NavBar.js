@@ -8,7 +8,7 @@ const NavBar = () => {
   return (
       <div>
         <Navbar bg="black" variant="dark" fixed='top' className='smooth-scroll'>
-          <Container>
+          <Container style={{ width: 600, paddingLeft: 80 }}>
           <Navbar.Brand href="#intro" style={{color:'white'}}>Who I Am</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#skills" style={{color:'white'}}>Skills</Nav.Link>
