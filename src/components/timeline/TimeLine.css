@@ -1,21 +1,14 @@
-/* .timeline_container {
-    width: 600px;
-    margin-left: 10px;
-} */
 
 .company {
     font-weight: 600;
     cursor: pointer;
-    /* max-width: 150px; */
     font-family: 'Poppins', sans-serif;
 }
 
 .company:hover {
-    color: blueviolet;
+    color: purple;
 }
 
-/* .period {
-    max-width: 180px;
-} */
+
 
 
