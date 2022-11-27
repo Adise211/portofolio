@@ -1,7 +1,6 @@
 import './Intro.css';
-import me from '../../images/me.jpg';
+// import me from '../../images/me.jpg';
 import me_2 from '../../images/me_2.jpeg';
-import me_3 from '../../images/me_3.jpeg';
 
 
 const Intro = () => {
@@ -28,9 +27,8 @@ const Intro = () => {
       </div>
 
       <div className='i-right'>
-        <img src={me} alt='myimage' className='i-img first'/>
-        <img src={me_2} alt='secondImage' className='i-img second'/>
-        <img src={me_3} alt='secondImage' className='i-img memoji'/>
+        {/* <img src={me} alt='myimage' className='i-img first'/> */}
+        <img src={me_2} alt='secondImage' className='i-img'/>
 
       </div>
     </div>

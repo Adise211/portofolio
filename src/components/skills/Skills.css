@@ -1,13 +1,23 @@
 .a {
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
 }
+/* 
+.icons-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  height: 250px;
+} */
 
 .icons {
   max-height: 100px;
   max-width: 100px;
   margin: 20px;
+  /* margin-left: 80px; */
 
 }
 
@@ -42,4 +52,10 @@
 .right {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
+}
+
+.my-memoji {
+  width: 350px;
+  height: 350px;
+  margin-bottom: 100px;
 }

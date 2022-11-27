@@ -66,25 +66,28 @@
 }
 
 .i-img {
-  width: 300px;
-  height: 300px;
-  border-radius: 200px;
+  width: 500px;
+  height: 500px;
+  border-radius: 400px;
+  position: relative;
+  top: 160px;
+  left: 130px;
 }
 
-.first {
+/* .first {
   position: relative;
   top: 220px;
   left: 30px;
 
-}
+} */
 
-.second {
+/* .second {
   position: relative;
   top: 150px;
   left: 70px;
-}
+} */
 
-.memoji {
+/* .memoji {
   margin-top: 110px;
   margin-left: 250px;
-}
+} */
