@@ -4,38 +4,75 @@ import finalProject from '../../images/final.png';
 import matchIt from '../../images/matchit.png';
 import myShop from '../../images/myshop.png';
 import weatherapp from '../../images/weatherapp.png';
-import { FaGithub } from 'react-icons/fa';
-import { TbWorld } from "react-icons/tb";
+import { projectInfo } from '../projectsInfo/projectsInfo.js';
+import { useState } from 'react';
+// import { FaGithub } from 'react-icons/fa';
+// import { TbWorld } from "react-icons/tb";
 
 
 const Projects = () => {
+  const [display,setDisplay] = useState(null);
 
-  const endless = () => {
-    window.open("https://products-api-adise.herokuapp.com","_blank")
+
+  const clickHandler = async (id) => {
+    if (id === 1) {
+      setDisplay(projectInfo[0]);
+    }
+    if (id === 2) {
+      setDisplay(projectInfo[1]);
+    }
+    if (id === 3) {
+      setDisplay(projectInfo[2]);
+    }
+  };
+
+  const clickOnLink = (link) => {
+    window.open(link,"_blank")
   }
 
-  const shop = () => {
-    window.open("https://github.com/Adise211/Hackathon-2","_blank")
-  }
-
-  const game = () => {
-    window.open("https://github.com/Adise211/Hackathon-1","_blank")
-  }
 
   return(
     <div className='p' id='projects'>
+      <div className='pro-names'>
+        <p 
+          className='p-name' 
+          style={{ fontSize: 18, fontWeight: 'bold' }}
+          onClick={() => clickHandler(1)}
+        >
+          Piggiy
+        </p>
+        <p 
+          className='p-name' 
+          style={{ fontSize: 18, fontWeight: 'bold'  }}
+          onClick={() => clickHandler(2)}
+        >
+          Ethio Store
+        </p>
+        <p 
+          className='p-name' 
+          style={{ fontSize: 18, fontWeight: 'bold'  }}
+          onClick={() => clickHandler(3)}
+        >
+          Match It
+        </p>
+      </div>
 
-      <div className='p-left'>
-        <div className='p-wrapper'>
-          <Carousel variant="dark"
-            style={{postion:'relative',left:'8vw',
-                    top:'2vh',border:'2px #333 solid',width:'120%'}}>
+      <div>
+          <Carousel 
+            variant="dark"
+            style={{
+              postion:'relative',
+              left:'60%',
+              top:'2vh',
+              border: '1px gray white',
+              boxShadow: '10px 10px 10px 10px gray'
+            }}
+          >
             <Carousel.Item>
               <img
                 className="d-block w-100"
                 src={finalProject}
                 alt="First slide"
-                style={{height:'50vh',width:'200vw'}}
             />
           </Carousel.Item>
           <Carousel.Item>
@@ -43,7 +80,6 @@ const Projects = () => {
               className="d-block w-100"
               src= {myShop}
               alt="Second slide"
-              style={{height:'50vh',width:'150vw'}}
             />
           </Carousel.Item>
           <Carousel.Item>
@@ -51,7 +87,6 @@ const Projects = () => {
               className="d-block w-100"
               src={matchIt}
               alt="Third slide"
-              style={{height:'50vh',width:'150vw'}}
             />
           </Carousel.Item>
 
@@ -60,46 +95,35 @@ const Projects = () => {
               className="d-block w-100"
               src={weatherapp}
               alt="Third slide"
-              style={{height:'50vh',width:'150vw',opacity:0.7}}
             />
             <Carousel.Caption>
               <h2>Coming soon...</h2>
             </Carousel.Caption>
           </Carousel.Item>
           </Carousel>
+          <div className='p-info'>
+            { display && (
+              <>
+                <p style={{ marginBottom: 20, fontSize: 18, textDecoration: 'underline' }}>{display.projectName}</p>
+                <p style={{ fontWeight: 'bold' }}>{display.tools}</p>
+                <p>{display.details}</p>
+                <p 
+                  style={{ 
+                    color: 'green', 
+                    textDecoration: 'underline', 
+                    cursor: 'pointer',
+                    marginTop: 50
+                  }}
+                  onClick={() => clickOnLink(display.link)}
+                >
+                  {display.link}
+                </p>
+              </>
+            )}
+          </div>
         </div>
-      </div>
-
-      <div className='p-right'>
-        <div className='p-wrapper'>
-          <div className='links' onClick={endless}>
-            <TbWorld />
-            <h5>EndlessBudgets</h5>
-            <p>Savings money app, help user mange his money</p>
-          </div>
-
-          <div className='links' onClick={shop}>
-            <FaGithub />
-            <h5>Ethio-Dresess</h5>
-            <p>Ethiopian shopping store, include diffrent kind of items</p>
-          </div>
-
-          <div className='links' onClick={game}>
-            <FaGithub />
-            <h5>Match It</h5>
-            <p>A game, matching the shapes to the description box</p>
-          </div>
-
-          <div className='links'>
-            <FaGithub />
-            <h5>Weather app</h5>
-            <p>Coming soon...</p>
-          </div>
-
-        </div>
-      </div>
-
-
+      
+      
 
     </div>
   )
