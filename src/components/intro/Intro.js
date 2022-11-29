@@ -1,3 +1,4 @@
+import React from 'react';
 import './Intro.css';
 // import me from '../../images/me.jpg';
 import me_2 from '../../images/me_2.jpeg';

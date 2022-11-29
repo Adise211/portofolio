@@ -31,13 +31,22 @@
   width: 50%;
   position: relative;
   bottom: 50%;
-  margin-left: 50px;
+  margin-left: 120px;
   text-align: center;
 }
 
 
 .links:hover {
   color: green;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 400px;
+  justify-content: space-between;
+  margin-left: 90%;
 }
 /* .p-card {
   width: 30%;

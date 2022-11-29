@@ -1,3 +1,9 @@
+import piggy_1 from '../../images/piggy_1.png';
+import piggy_2 from '../../images/piggy_2.jpg';
+import piggy_3 from '../../images/piggy_3.jpg';
+import piggy_4 from '../../images/piggy_4.jpg';
+
+
 
 
 export const projectInfo = [
@@ -10,7 +16,8 @@ export const projectInfo = [
         + ' This app focuses on 2 features: 1. Check the balance with a diagram of total, add incomes and expenses.'
         + '2. User could set monthly budget (optional), for example 300$ for groceries, and follow up on their goal,'
         + 'once he will get to 60% or 80% of his budget (160$ or 240$), he will get a warning notification.',
-        link: 'https://github.com/Adise211/piggy-mobile'
+        link: 'https://github.com/Adise211/piggy-mobile',
+        images: [piggy_1, piggy_2, piggy_3, piggy_4]
     },
     {
         id: 2,

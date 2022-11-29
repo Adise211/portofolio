@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 // eslint-disable-next-line
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Intro from './components/intro/Intro.js';

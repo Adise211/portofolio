@@ -1,3 +1,4 @@
+import React from 'react';
 import './Skills.css';
 import me_3 from '../../images/me_3.jpeg';
 import mongoDB from '../../images/mongoDB.png';

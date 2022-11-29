@@ -1,3 +1,4 @@
+import React from 'react';
 import './ContactMe.css';
 import { FaLinkedin } from 'react-icons/fa';
 import { FaPhoneAlt } from 'react-icons/fa';
