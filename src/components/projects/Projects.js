@@ -6,6 +6,7 @@ import { useState } from 'react';
 // import { FaGithub } from 'react-icons/fa';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import { VscZoomIn } from "react-icons/vsc";
+import ZoomIn from '../ZoomIn';
 // const useStyles = makeStyles(theme => ({
 
 // });
@@ -13,6 +14,7 @@ import { VscZoomIn } from "react-icons/vsc";
 const Projects = () => {
   const [display,setDisplay] = useState(projectInfo[0]);
   const [pickedImage,setPickedImage] = useState(0);
+  const [openZoom,setOpenZoom] = useState(false);
 
   useEffect(() => {
     const firstDisplay = () => {
@@ -20,7 +22,7 @@ const Projects = () => {
     }
     firstDisplay();
   },[])
-  
+
   const clickHandler = async (id) => {
     if (id === 1) {
       setDisplay(projectInfo[0]);
@@ -67,6 +69,7 @@ const Projects = () => {
 
   };
 
+
   const imageWidth = display && display.id === 1 ? 300 : 600 ;
   const positionLeft = display && display.id === 1 ? 120 : 290 ;
 
@@ -83,20 +86,20 @@ const Projects = () => {
           Piggy
         </p>
         <p 
-          id='ethio'
-          className='p-name' 
-          style={{ fontSize: 18, fontWeight: 'bold'  }}
-          onClick={() => clickHandler(2)}
-        >
-          Ethio Store
-        </p>
-        <p 
           id='endless'
           className='p-name' 
           style={{ fontSize: 18, fontWeight: 'bold'  }}
           onClick={() => clickHandler(3)}
         >
           Endless
+        </p>
+        <p 
+          id='ethio'
+          className='p-name' 
+          style={{ fontSize: 18, fontWeight: 'bold'  }}
+          onClick={() => clickHandler(2)}
+        >
+          Ethio Store
         </p>
       </div>
 
@@ -143,15 +146,13 @@ const Projects = () => {
                 }}
               >
                 <FaArrowLeft onClick={galleryPreHandler} style={{ cursor: 'pointer', position: 'relative', top: 200, fontSize: 24 }}/>
-                <VscZoomIn style={{ cursor: 'pointer', position: 'relative', top: 200, fontSize: 24 }}/>
+                <VscZoomIn onClick={() => setOpenZoom(true)} style={{ cursor: 'pointer', position: 'relative', top: 200, fontSize: 24 }}/>
                 <FaArrowRight onClick={galleryNextHandler} style={{ cursor: 'pointer', position: 'relative', top: 200, fontSize: 24  }}/>
               </div>
+              <ZoomIn open={openZoom} project={display} imageNum={pickedImage} setOpenZoom={setOpenZoom}/>
           </>
         )}
         </div>
-        {/* <div className='p-left'>
-
-        </div> */}
           <div className='p-info p-left'>
             { display && (
               <>
