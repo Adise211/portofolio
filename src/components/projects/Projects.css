@@ -3,15 +3,24 @@
   height: 80vh;
   display: flex;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
   flex-direction: column;
 }
+
+.p-right {
+  position: relative;
+  left: 70%;
+}
+
+/* .p-left {
+  flex: 1;
+} */
 
 .pro-names {
   display: flex;
   flex-direction: row;
   width: 50%;
-  margin-left: 700px;
+  margin-left: 130%;
 }
 
 .p-name {
@@ -28,10 +37,10 @@
 }
 
 .p-info {
-  width: 50%;
+  width: 60%;
   position: relative;
-  bottom: 50%;
-  margin-left: 120px;
+  bottom: 90%;
+  right: 120px;
   text-align: center;
 }
 
@@ -44,10 +53,18 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  width: 400px;
+  min-width: 400px;
   justify-content: space-between;
-  margin-left: 90%;
 }
+
+.img-controls {
+  min-width: 200px;
+  height: 200px;
+}
+
+
+
+
 /* .p-card {
   width: 30%;
   height: 10vh;

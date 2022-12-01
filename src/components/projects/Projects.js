@@ -1,31 +1,46 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Projects.css';
-import Carousel from 'react-bootstrap/Carousel';
-import matchIt from '../../images/matchit.png';
-import myShop from '../../images/myshop.png';
-import weatherapp from '../../images/weatherapp.png';
 import { projectInfo } from '../projectsInfo/projectsInfo.js';
 import { useState } from 'react';
+// import { makeStyles } from "@material-ui/core/styles";
 // import { FaGithub } from 'react-icons/fa';
-// import { TbWorld } from "react-icons/tb";
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+import { VscZoomIn } from "react-icons/vsc";
+// const useStyles = makeStyles(theme => ({
 
+// });
 
 const Projects = () => {
-  const [display,setDisplay] = useState(null);
+  const [display,setDisplay] = useState(projectInfo[0]);
   const [pickedImage,setPickedImage] = useState(0);
 
-  // let pickedImage = display ? display.images[0]: '';
-
+  useEffect(() => {
+    const firstDisplay = () => {
+      document.getElementById('piggy').style.color = 'green'
+    }
+    firstDisplay();
+  },[])
+  
   const clickHandler = async (id) => {
     if (id === 1) {
       setDisplay(projectInfo[0]);
+      document.getElementById('piggy').style.color = 'green'
+    } else {
+      document.getElementById('piggy').style.color = 'black'
     }
+
     if (id === 2) {
       setDisplay(projectInfo[1]);
+      document.getElementById('ethio').style.color = 'green'
+    } else {
+      document.getElementById('ethio').style.color = 'black'
     }
+
     if (id === 3) {
       setDisplay(projectInfo[2]);
+      document.getElementById('endless').style.color = 'green'
+    } else {
+      document.getElementById('endless').style.color = 'black'
     }
   };
 
@@ -33,22 +48,6 @@ const Projects = () => {
     window.open(link,"_blank")
   }
 
-  // const galleryHandler = () => {
-  //   console.log("working?");
-  //   if(pickedImage === display.images[0]) {
-  //     return pickedImage === display.images[1]
-  //   }
-  //   else if (pickedImage === display.images[1]) {
-  //     return pickedImage === display.images[2]
-  //   }
-  //   else if (pickedImage === display.images[2]) {
-  //     return pickedImage === display.images[3]
-  //   }
-  //   else {
-  //     return pickedImage === display.images[0]
-  //   }
-
-  // };
 
   const galleryNextHandler = () => {
     if (pickedImage === 3){
@@ -68,17 +67,23 @@ const Projects = () => {
 
   };
 
+  const imageWidth = display && display.id === 1 ? 300 : 600 ;
+  const positionLeft = display && display.id === 1 ? 120 : 290 ;
+
+
   return(
     <div className='p' id='projects'>
       <div className='pro-names'>
         <p 
+          id='piggy'
           className='p-name' 
           style={{ fontSize: 18, fontWeight: 'bold' }}
           onClick={() => clickHandler(1)}
         >
-          Piggiy
+          Piggy
         </p>
         <p 
+          id='ethio'
           className='p-name' 
           style={{ fontSize: 18, fontWeight: 'bold'  }}
           onClick={() => clickHandler(2)}
@@ -86,6 +91,7 @@ const Projects = () => {
           Ethio Store
         </p>
         <p 
+          id='endless'
           className='p-name' 
           style={{ fontSize: 18, fontWeight: 'bold'  }}
           onClick={() => clickHandler(3)}
@@ -94,67 +100,59 @@ const Projects = () => {
         </p>
       </div>
 
-      <div>
+      <div className='p-right'>
         {display && display.images && (
           <>
             <div className='gallery'>
-              <FaArrowLeft onClick={galleryPreHandler} style={{ cursor: 'pointer', position: 'relative', top: 200, fontSize: 24 }}/>
-              { pickedImage === 0 && <img src={display.images[0]} alt='project-1' style={{ height: 450, width: 300, boxShadow: '7px 7px 7px 7px grey' }}/>}
-              { pickedImage === 1 && <img src={display.images[1]} alt='project-2' style={{ height: 450, width: 300, boxShadow: '7px 7px 7px 7px grey' }}/>}
-              { pickedImage === 2 && <img src={display.images[2]} alt='project-3' style={{ height: 450, width: 300, boxShadow: '7px 7px 7px 7px grey' }}/>}
-              { pickedImage === 3 && <img src={display.images[3]} alt='project-4' style={{ height: 450, width: 300, boxShadow: '7px 7px 7px 7px grey' }}/>}
-              <FaArrowRight onClick={galleryNextHandler} style={{ cursor: 'pointer', position: 'relative', top: 200, fontSize: 24  }}/>
+              { pickedImage === 0 && 
+                <img 
+                  id='pic' 
+                  src={display.images[0]} 
+                  alt='project-1' 
+                  style={{ height: 450, width: imageWidth, boxShadow: '7px 7px 7px 7px grey' }}
+                />
+              }
+              { pickedImage === 1 && 
+                <img 
+                  src={display.images[1]} 
+                  alt='project-2' 
+                  style={{ height: 450, width: imageWidth, boxShadow: '7px 7px 7px 7px grey' }}
+                />
+              }
+              { pickedImage === 2 && 
+                <img 
+                src={display.images[2]} 
+                alt='project-3' 
+                style={{ height: 450, width: imageWidth, boxShadow: '7px 7px 7px 7px grey' }}
+                />
+              }
+              { pickedImage === 3 && 
+                <img 
+                  src={display.images[3]} 
+                  alt='project-4' 
+                  style={{ height: 450, width: imageWidth, boxShadow: '7px 7px 7px 7px grey' }}
+                />
+              }
             </div>
+              <div 
+                className='img-controls' 
+                style={{ 
+                  position: 'relative',
+                  bottom: 150,
+                  left: positionLeft
+                }}
+              >
+                <FaArrowLeft onClick={galleryPreHandler} style={{ cursor: 'pointer', position: 'relative', top: 200, fontSize: 24 }}/>
+                <VscZoomIn style={{ cursor: 'pointer', position: 'relative', top: 200, fontSize: 24 }}/>
+                <FaArrowRight onClick={galleryNextHandler} style={{ cursor: 'pointer', position: 'relative', top: 200, fontSize: 24  }}/>
+              </div>
           </>
         )}
+        </div>
+        {/* <div className='p-left'>
 
-
-
-          {/* <Carousel 
-            variant="dark"
-            style={{
-              postion:'relative',
-              left:'60%',
-              top:'2vh',
-              border: '1px gray white',
-              boxShadow: '10px 10px 10px 10px gray'
-            }}
-          > 
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={piggy_2}
-                alt="First slide"
-                style={{ height: 400, width: 500, backgroundColor: 'white', border: '30px white solid' }}
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src= {myShop}
-              alt="Second slide"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={matchIt}
-              alt="Third slide"
-            />
-          </Carousel.Item>
-
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={weatherapp}
-              alt="Third slide"
-            />
-            <Carousel.Caption>
-              <h2>Coming soon...</h2>
-            </Carousel.Caption>
-          </Carousel.Item>
-          </Carousel> */}
-          <div className='p-info'>
+        </div> */}
+          <div className='p-info p-left'>
             { display && (
               <>
                 <p style={{ marginBottom: 20, fontSize: 18, textDecoration: 'underline' }}>{display.projectName}</p>
@@ -174,7 +172,6 @@ const Projects = () => {
               </>
             )}
           </div>
-        </div>
       
       
 
