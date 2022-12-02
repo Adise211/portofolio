@@ -6,12 +6,17 @@ import { FaInstagram } from 'react-icons/fa';
 import { FaMailBulk } from 'react-icons/fa';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+// import MyAlert from '../myAlert/MyAlert';
+import { Alert, Snackbar } from '@mui/material';
 
 
 
 const ContactMe = () => {
   const formRef = useRef();
   const [done,setDone] = useState(false);
+  const [message,setMessage] = useState('');
+  const [open,setOpen] = useState(false);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,9 +28,16 @@ const ContactMe = () => {
     )
       .then((result) => {
           console.log(result.text);
-          setDone(true)
+          setDone(true);
+          setMessage("Email Sent Successfully!");
+          const emailForm = document.getElementById('myForm');
+          emailForm.reset();
+          setOpen(true);
       }, (error) => {
           console.log(error.text);
+          setDone(false);
+          setMessage("Email Failed!")
+          setOpen(true);
       });
   }
 
@@ -37,10 +49,18 @@ const ContactMe = () => {
     window.open("https://www.instagram.com/adise_211","_blank")
   }
 
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
 
+    setOpen(false);
+    setDone(false);
+  };
 
+  const messageColor = done ? 'green' : 'red';
 
-  return(
+  return (
     <div className='c' id='contact'>
       <div className='c-left'>
         <div className='c-icons'>
@@ -52,23 +72,32 @@ const ContactMe = () => {
       </div>
 
       <div className='c-right'>
-        <h2>Send Me A Message</h2>
-        <form ref={formRef} onSubmit={handleSubmit}>
-          <input type='text' placeholder='Name' name='user_name'/>
-          <input type='text' placeholder='Subject' name='user_subject'/>
-          <input type='email' placeholder='Your Email' name='user_email'/>
-          <textarea rows='5' placeholder='Message' name='message'/>
-          <button type='submit'>Send</button>
-          <h4 className='c-sent'>
-          {
-            done && 'Thank you!'
-          }
-          </h4>
-        </form>
+        <div className='email-container'>
+          <h2 style={{ marginTop: 30 }}>Send Me An Email</h2>
+          <form ref={formRef} onSubmit={handleSubmit} id='myForm'>
+            <input type='text' placeholder='Name' name='user_name' className='email-input'/>
+            <input type='text' placeholder='Subject' name='user_subject' className='email-input'/>
+            <input type='email' placeholder='Your Email' name='user_email' className='email-input'/>
+            <textarea rows='5' placeholder='Message' name='message'/>
+            <button className='send-button'>Send</button>
+            <div>
+            { open && (
+              <>
+                <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}> 
+                  <Alert  sx={{ width: '100%', backgroundColor: messageColor, color: 'white' }}>
+                    { message } 
+                  </Alert>
+                </Snackbar>
+              </>
+            )}
+            </div>
+          </form>
+        </div>
       </div>
+
     </div>
   )
-}
+};
 
 
 export default ContactMe;

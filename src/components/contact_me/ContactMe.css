@@ -1,9 +1,10 @@
 .c {
   height: 80vh;
   display: flex;
+  margin-top: 20%;
   /* align-items: center; */
-  background-color: black;
-  color: white;
+  /* background-color: black; */
+  /* color: white; */
 }
 
 .c-left {
@@ -38,28 +39,44 @@ form {
 
 }
 
-input {
+.email-input {
   width: 50%;
   height: 40px;
   border: none;
   border-bottom: 1px solid black;
   margin-bottom: 10px;
+  padding-left: 10px;
 }
 
 textarea {
-  margin-top: 70px;
-  margin-right: 70px;
+  margin-top: 30px;
+  margin-right: 100px;
+  padding-left: 10px;
 }
 
-button {
+.send-button {
+  font-weight: bold;
   width: 70px;
   margin-top: 40px;
   margin-left: 80px;
   border: none;
-  padding: 7px;
-  background-color: white;
+  padding: 10px;
+  background-color: purple;
+  color: white;
+  border-radius: 10px;
 }
 
 .c-sent {
   margin-left: 30%;
+}
+
+.email-container {
+  border: 1px black solid;
+  width: 80%;
+  padding-left: 150px;
+  padding-bottom: 20px;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 7px 7px 7px 7px grey;
 }
