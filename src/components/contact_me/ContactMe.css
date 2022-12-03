@@ -13,14 +13,12 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 25%;
+  margin-bottom: 7%;
+  width: 300px;
 
 }
 
-.c-icons{
-  height: 50px;
-  width: 100px;
-  font-size: 40px;
+.icons-links, .icons-show{
   cursor: pointer;
 }
 

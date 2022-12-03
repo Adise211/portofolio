@@ -1,12 +1,12 @@
 import React from 'react';
 import './ContactMe.css';
-import { FaLinkedin } from 'react-icons/fa';
 import { FaPhoneAlt } from 'react-icons/fa';
-import { FaInstagram } from 'react-icons/fa';
-import { FaMailBulk } from 'react-icons/fa';
+import linkedin2 from '../../images/linkedin2.png';
+import github from '../../images/github.png';
+import gmail from '../../images/gmail.png';
+import insta from '../../images/insta.png';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-// import MyAlert from '../myAlert/MyAlert';
 import { Alert, Snackbar } from '@mui/material';
 
 
@@ -16,6 +16,8 @@ const ContactMe = () => {
   const [done,setDone] = useState(false);
   const [message,setMessage] = useState('');
   const [open,setOpen] = useState(false);
+  const [number,setNumber] = useState(null);
+  const [email,setEmail] = useState(null);
 
 
   const handleSubmit = (e) => {
@@ -41,12 +43,26 @@ const ContactMe = () => {
       });
   }
 
-  const linkdin = () => {
-    window.open("https://www.linkedin.com/in/adise-mamuye-15876a240","_blank")
+  const openLinkedin = () => {
+    window.open("https://www.linkedin.com/in/adise-mamoye-15876a240/","_blank");
   }
 
-  const insta = () => {
-    window.open("https://www.instagram.com/adise_211","_blank")
+  const openInsta = () => {
+    window.open("https://www.instagram.com/adise_211","_blank");
+  }
+
+  const openGithub = () => {
+    window.open("https://github.com/Adise211", "_blank");
+  };
+
+  const showNumber = () => {
+    if (!number) setNumber('+972532463375');
+    else setNumber(null);
+  }
+
+  const showEmail = () => {
+    if (!email) setEmail('adisemamo211@gmail.com');
+    else setEmail(null);
   }
 
   const handleClose = (event, reason) => {
@@ -63,11 +79,16 @@ const ContactMe = () => {
   return (
     <div className='c' id='contact'>
       <div className='c-left'>
-        <div className='c-icons'>
-          <FaLinkedin onClick={linkdin}/><h6>Adise Mamuye</h6>
-          <FaMailBulk /><h6>adisemamo211@gmail.com</h6>
-          <FaPhoneAlt /><h6>053-2463375</h6>
-          <FaInstagram onClick={insta}/><h6>adise_211</h6>
+        <div className='icons-links'>
+          <img src={linkedin2} alt='linkedin' onClick={openLinkedin} style={{ height: 50, width: 50 }}/>
+          <img src={github} alt='github' onClick={openGithub} style={{ height: 70, width: 70, marginLeft: 10 }} />
+          <img src={insta} alt='insta' onClick={openInsta} style={{ height: 70, width: 70 }} />
+        </div>
+        <div className='icons-show'>
+          {email}
+          <img src={gmail} alt='gmail' style={{ height: 70, width: 70, marginRight: 10 }} onClick={showEmail}/>
+          <FaPhoneAlt style={{ height: 40, width:40, marginLeft: 10 }} onClick={showNumber}/>
+          {number}
         </div>
       </div>
 
@@ -94,7 +115,6 @@ const ContactMe = () => {
           </form>
         </div>
       </div>
-
     </div>
   )
 };
