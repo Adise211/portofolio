@@ -19,7 +19,7 @@ const Experience = () => {
                         className="open-text" 
                         style={{ fontSize: 20 }}
                     >
-                        Please click on the comapny name to see more details
+                        Please click on the company name to see more details!
                     </div>
                     <div className='arrows'>
                         <FaAngleDoubleLeft style={{ fontSize: 28 }}/>

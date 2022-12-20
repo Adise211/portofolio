@@ -16,22 +16,22 @@ const DialogDesc = ({ company, open, setOpen }) => {
 
     const content1 = {
         position: "Full Stack Developer, Remote, Part Time." ,
-        aboutTheCompany:  "A mediacal start up company. Small team of 5-10 people.",
-        description: "The team and I are bulding a medical platfrom that will help ... to manage thir time and follow ups with patients." ,
+        aboutTheCompany:  "A medical start up company. Small team of 5-10 people.",
+        description: "The team and I are building a medical platfrom that will help ophthalmologists and optometrists to manage their time and follow ups with patients." ,
         place: 'Austin, Texas, US.'
     };
 
     const content2 = {
         position: "Service Representative.",
-        aboutTheCompany:  "A medical company that provides home healtcare service.",
+        aboutTheCompany:  "A medical company that provides home healthcare services.",
         description: "Medical services and schedule meetings between patients and doctors." ,
         place: 'Ramat Gan, Israel.'
     };
 
     const content3 = {
-        position: "A Medic Soldir." ,
+        position: "A Medic." ,
         aboutTheCompany:  "Army - C4I Corps.",
-        description: "Served  2 years as a medic, provided medical treatment to soldiers." ,
+        description: "Served 2 years as a medic, provided medical treatment to soldiers." ,
         place: 'Shomron, Israel.'
     };
 
@@ -71,7 +71,7 @@ const DialogDesc = ({ company, open, setOpen }) => {
                             <Typography style={{ fontWeight: 'bold', marginBottom: 15 }}>Position: <Typography>{display.position}</Typography></Typography>
                             <Typography style={{ fontWeight: 'bold', marginBottom: 15 }}>About The Company: <Typography>{display.aboutTheCompany}</Typography></Typography>
                             <Typography style={{ fontWeight: 'bold', marginBottom: 15 }}>Description: <Typography>{display.description}</Typography></Typography>
-                            <Typography style={{ fontWeight: 'bold' }}>Place: <Typography>{display.place}</Typography></Typography>
+                            <Typography style={{ fontWeight: 'bold' }}>Location: <Typography>{display.place}</Typography></Typography>
                         </>
                     )}
                 </DialogContent>

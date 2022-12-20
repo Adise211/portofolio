@@ -8,14 +8,6 @@
     animation-iteration-count: infinite;
 }
 
-@keyframes companyName {
-    0%   {color: blueviolet;}
-    25%  {color:yellow; }
-    50%  {color:blue; }
-    75%  {color:green;}
-    100% {color:red; }
-  }
-
 .company:hover {
     color: purple;
 }
